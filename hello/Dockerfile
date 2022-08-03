@@ -8,7 +8,7 @@ WORKDIR /build
 RUN GOOS=linux GOARCH=amd64 go build -o hello main.go
 
 FROM alpine
-EXPOSE 8090
+EXPOSE 8080
 
 COPY --from=builder /build/hello /hello
 ENTRYPOINT ["/hello"]
